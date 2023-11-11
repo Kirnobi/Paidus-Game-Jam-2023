@@ -39,6 +39,7 @@ public class Rope : MonoBehaviour
         bird.layer = RopeLayer;
         bird.transform.parent = transform;
         bird.transform.position = transform.position;
+        bird.tag = "Player";
         HingeJoint2D birdHinge = bird.GetComponent<HingeJoint2D>();
         birdHinge.connectedBody = prevBody;
     }

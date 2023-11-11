@@ -13,7 +13,7 @@ public class hookHinge : MonoBehaviour
         joint = GetComponent<HingeJoint2D>();
         // (canStick)
         //
-            if (Input.GetKeyDown(KeyCode.P))
+            if (Input.GetKeyDown(KeyCode.P) && canStick)
             {
                 if (joint != null)
                 {
