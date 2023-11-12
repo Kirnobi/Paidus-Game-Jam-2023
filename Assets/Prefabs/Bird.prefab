@@ -192,7 +192,7 @@ MonoBehaviour:
   moveCDMax: 1.5
   moveCD: 0
   canMove: 0
-  speed: 100
+  speed: 70
   grounded: 0
   hook: {fileID: 0}
 --- !u!1 &8750282357123865137
