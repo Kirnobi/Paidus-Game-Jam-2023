@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class hookHinge : MonoBehaviour
 {
-    HingeJoint2D joint;
+    HingeJoint2D hingeJoint;
     bool canStick = false;
 
     // Update is called once per frame
     void Update()
     {
-        joint = GetComponent<HingeJoint2D>();
+        hingeJoint = GetComponent<HingeJoint2D>();
 
         if (Input.GetKeyDown(KeyCode.P) && canStick)
         {
-            if (joint != null)
+            if (hingeJoint != null)
             {
-                Destroy(joint);
+                Destroy(hingeJoint);
             }
             else
             {
-                joint = gameObject.AddComponent<HingeJoint2D>();
+                hingeJoint = gameObject.AddComponent<HingeJoint2D>();
             }
         }
     }
