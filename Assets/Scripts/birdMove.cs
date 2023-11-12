@@ -8,6 +8,10 @@ public class birdMove : MonoBehaviour
     public float moveCD;
     public bool canMove;
     public int speed;
+
+    public bool grounded;
+
+    GameObject hook;
     Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -23,7 +27,12 @@ public class birdMove : MonoBehaviour
         {
             moveCD -= Time.deltaTime;
         }
-        else
+        else if(grounded)
+        {
+            canMove = true;
+        }
+
+        if(hook.GetComponent<HingeJoint2D>() != null)
         {
             canMove = true;
         }
@@ -56,4 +65,21 @@ public class birdMove : MonoBehaviour
             }
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Ground")
+        {
+            grounded = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Ground")
+        {
+            grounded = false;
+        }
+    }
+
 }
