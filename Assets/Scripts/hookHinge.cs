@@ -11,20 +11,18 @@ public class hookHinge : MonoBehaviour
     void Update()
     {
         joint = GetComponent<HingeJoint2D>();
-        // (canStick)
-        //
-            if (Input.GetKeyDown(KeyCode.P) && canStick)
+
+        if (Input.GetKeyDown(KeyCode.P) && canStick)
+        {
+            if (joint != null)
             {
-                if (joint != null)
-                {
-                    Destroy(joint);
-                }
-                else
-                {
-                    joint = gameObject.AddComponent<HingeJoint2D>();
-                }
+                Destroy(joint);
             }
-        //
+            else
+            {
+                joint = gameObject.AddComponent<HingeJoint2D>();
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
