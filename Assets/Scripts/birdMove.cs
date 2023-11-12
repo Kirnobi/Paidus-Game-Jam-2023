@@ -34,30 +34,30 @@ public class birdMove : MonoBehaviour
 
         if(hook.GetComponent<HingeJoint2D>() != null)
         {
-            canMove = true;
+            grounded = true;
         }
 
         if(canMove)
         {
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.W))
             {
                 rb.AddForce(Vector2.up * speed, ForceMode2D.Impulse);
                 canMove = false;
                 moveCD = moveCDMax;
             }
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.A))
             {
                 rb.AddForce(Vector2.left * speed, ForceMode2D.Impulse);
                 canMove = false;
                 moveCD = moveCDMax;
             }
-            if (Input.GetKey(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.S))
             {
                 rb.AddForce(Vector2.down * speed, ForceMode2D.Impulse);
                 canMove = false;
                 moveCD = moveCDMax;
             }
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.D))
             {
                 rb.AddForce(Vector2.right * speed, ForceMode2D.Impulse);
                 canMove = false;
