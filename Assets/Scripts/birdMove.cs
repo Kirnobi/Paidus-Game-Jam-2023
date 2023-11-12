@@ -11,7 +11,7 @@ public class birdMove : MonoBehaviour
 
     public bool grounded;
 
-    GameObject hook;
+    public GameObject hook;
     Rigidbody2D rb;
 
     // Start is called before the first frame update
