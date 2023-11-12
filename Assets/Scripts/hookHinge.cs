@@ -6,23 +6,20 @@ public class hookHinge : MonoBehaviour
 {
     HingeJoint2D hingeJoint;
     bool canStick = false;
-    Transform checkpointSpawn;
+    public Transform checkpointSpawn;
 
     // Update is called once per frame
     void Update()
     {
         hingeJoint = GetComponent<HingeJoint2D>();
 
+        if (hingeJoint != null && Input.GetKeyDown(KeyCode.P))
+        {
+            Destroy(hingeJoint);
+        }
         if (Input.GetKeyDown(KeyCode.P) && canStick)
         {
-            if (hingeJoint != null)
-            {
-                Destroy(hingeJoint);
-            }
-            else
-            {
-                hingeJoint = gameObject.AddComponent<HingeJoint2D>();
-            }
+               hingeJoint = gameObject.AddComponent<HingeJoint2D>();
         }
     }
 
